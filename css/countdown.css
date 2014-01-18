@@ -1,0 +1,188 @@
+/*
+Item Name : Circular Countdown jQuery Plugin
+Item URI : http://codecanyon.net/item/circular-countdown-jquery-plugin/3761921
+Author URI : http://codecanyon.net/user/Pixelworkshop/
+Version : 1.21
+*/
+
+
+/*  _______________________________________
+
+	COUNTDOWN
+    _______________________________________  */
+	
+
+
+/* 
+   IMPORTANT
+   The exact same width must be set to the #countdown_container and to the canvas
+   element #circular_countdown in the HTML markup !
+*/
+
+
+#countdown_timer,
+#countdown_timer ul,
+#circular_countdown {
+	position: relative;
+	width:100%;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+}
+#countdown_clock {
+	width:100%;
+	position:relative;
+	z-index:1;
+	margin: 0;
+	padding:0;
+}
+
+#circular_countdown_seconds {
+	position:relative;
+	z-index:1;
+	padding:0;
+	width: 160px;
+}
+
+#circular_countdown_seconds {
+	margin: 0px auto;
+}
+#countdown_timer {
+	z-index:2;
+	width: 800px;
+}
+	#countdown_timer li {
+		list-style: none;
+		padding: 18px 20px 8px 20px;
+		margin-top: 42px;
+		float: left;
+		width: 160px;
+		color:#333333;
+		font-size: 9px;
+		position: absolute;
+		text-align: center;
+		text-transform:uppercase;
+	}
+
+		#countdown_timer li.seconds {
+			left:600px;
+		}
+		#countdown_timer li em {
+			display: block;
+			font-size:32px;
+			line-height:30px;
+			font-weight:bold;
+			font-style: normal;
+			padding:0;
+		}
+
+/*
+Markup to keep a decent layout under IE8 and below
+*/
+
+/* IE8 */
+
+@media \0screen {
+	#countdown_timer {
+		height: 130px;
+	}
+	#countdown_container h1 {
+		margin:0 auto;
+	}
+}
+
+/* IE7 and below */
+
+#countdown_timer {
+	*height: 130px;
+}
+
+
+
+
+@media screen and (min-width: 985px) {
+	#countdown_container {
+		width: 820px;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 984px) {
+
+
+	#countdown_timer {
+		z-index:2;
+		width: 600px;
+	}
+
+	#countdown_timer li.seconds {
+		margin-left: 95px;
+	}
+
+		#countdown_timer li.seconds {
+			left:217px;
+			top:180px;
+		}
+
+	#circular_countdown_seconds {
+		clear: left;
+		margin: 0 0 17px 100px;
+	}
+
+	#circular_countdown_seconds {
+		clear: left;
+		margin: 0 0 17px 70px;
+	}
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+
+	#countdown_timer {
+		z-index:2;
+		width: 300px;
+	}
+
+	#countdown_timer li.seconds {
+		left:auto;
+		margin-left: 50px;
+	}
+
+		#countdown_timer li.seconds {
+			top:557px;
+		}
+
+	#circular_countdown_seconds {
+		clear: left;
+		margin: 0 0 20px 70px;
+	}
+
+}
+
+
+
+@media only screen and (max-width: 479px) {
+
+
+	#countdown_timer {
+		width: 260px;
+	}
+
+
+	#countdown_timer li.seconds {
+		left:auto;
+		margin-left: 20px;
+	}
+
+		#countdown_timer li.seconds {
+			top:560px;
+		}
+
+	#circular_countdown_seconds {
+		clear: left;
+		margin: 0 0 20px 40px;
+	}
+
+}
+
+

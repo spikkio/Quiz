@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Quiz</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		
+		<!-- FONTS-->
+		<link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,800' rel='stylesheet' type='text/css'>
+		<!---->
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/jquery.countdown.css"> 
+        <link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/style.css">
+        
+		<script src="js/modernizr-2.6.2.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+		<!--<script src="js/jquery-1.10.2.min.js"></script>-->
+        <script src="js/plugins.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.countdown.js"></script>
+		<script src="js/jquery.knob.js"></script>
+		<script src="js/timer.js"></script>
+        <script src="js/script.js"></script>
+		
+		<script> 
+			$(document).ready(init);
+		</script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+
+    <div id="unsupported">
+      <h1>Your Browser does not support 
+      CSS3 Transforms. You will not be able to see the 
+      neat transforms applied to the elements below!
+      </h1>
+    </div>
+    
+    <div id="container" class=".container">
+	
+		<div id="top-bar" class="row">
+			<p>Account name</p>
+		</div>
+		
+		<div id="board-top-spacer" class="row">
+		</div>
+		
+		<div id="mainMenu" class="row">
+			<div id="playButton" class="mainMenuButton">
+				<p>Play</p>
+			</div>
+			<div id="statsButton" class="mainMenuButton">
+				<p>High scores</p>
+			</div>
+			<div id="logoutButton" class="mainMenuButton">
+				<p>Logout</p>
+			</div>
+		</div>
+		<div id="board" class="row">
+		
+			<div id="board-top" class="col-xs-12">
+				<div id="boxTimer" class="col-xs-2 col-xs-offset-1">
+					<span>Time:
+						<div id="timer"></div>
+						<input type="text" class="dial">
+					</span>
+				</div>
+				<div id="boxQuestion" class="col-xs-6">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</p>
+				</div>
+				<div id="boxScore" class="col-xs-2">
+					<span>Score:
+						<div id="score">
+							<span>3</span>
+						</div>
+					</span>
+				</div>
+			</div>
+			<div id="board-middle-spacer" class="col-xs-12"></div>
+			<div id="board-bottom" class="col-xs-12">
+				<div class="col-xs-1"></div>
+				<div id="commands" class="col-xs-10">
+					
+					<div class="command" id="commandA">
+						<div class="commandLabelTopLeft">A</div>
+						<span class="answer">Init countdown</span>
+					</div>
+					
+					<div class="command" id="commandB">
+						<div class="commandLabelBottomLeft">B</div>
+						<span class="answer">Pause countdown</span>
+					</div>
+					
+					<div class="command" id="commandC">
+						<div class="commandLabelTopRight">C</div>
+						<span class="answer">Resume countdown</span>
+					</div>
+					
+					<div class="command" id="commandD">
+						<div class="commandLabelBottomRight">D</div>
+						<span class="answer">Unassigned</span>
+					</div>
+					
+					<div id="centralButton"></div>
+				</div>
+				<div class="col-xs-1"></div>
+			</div>
+		</div>
+
+		<div id="board-bottom-spacer" class="row">
+		</div>
+		
+		<div id="bottom-bar" class="row">
+			<p>This is the bottom bar</p>
+		</div> 
+    </div>
+	
+
+  </body>
+</html>
+		
