@@ -1,0 +1,112 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+
+  <title>My Parse App</title>
+  <meta name="description" content="My Parse App">
+  <meta name="viewport" content="width=device-width">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.15.min.js"></script>
+  <script type="text/javascript" src="./js/communication/beans/question.js"></script>
+  <script type="text/javascript" src="./js/communication/beans/answer.js"></script>
+   <script type="text/javascript" src="./js/communication/beans/category.js"></script>
+   <script type="text/javascript" src="./js/communication/beans/userAnswer.js"></script>
+  <script type="text/javascript" src="./js/communication/data/parseManager.js"></script>
+  <script type="text/javascript" src="./js/communication/listeners/signupListener.js"></script>
+  <script type="text/javascript" src="./js/communication/listeners/loginListener.js"></script>
+  <script type="text/javascript" src="./js/communication/listeners/questionListener.js"></script>
+  <script type="text/javascript" src="./js/communication/listeners/userAnswerListener.js"></script>
+  <script type="text/javascript" src="./js/communication/listeners/userScoreListListener.js"></script>
+  
+</head>
+
+<body>
+  
+    
+
+  <script type="text/javascript">
+    Parse.initialize("qFecWFZDy9yWoNjfEWdcvYW2S0LQzgw5BdvVm7lx", "EKA98gnS1A49Yy0xHB60MtEB8nElHBAg6uhCimg9");
+    
+    var parseManager = new parseManager();
+    	
+    
+   
+   
+    
+    
+    var question = new question();
+    
+    var answerObj = new answer();
+    var answer1 = new answer();
+    var answer2 = new answer();
+    var answer3 = new answer();
+    var answerOk = new answer();
+ 	var category = new category();
+    
+    // parseManager.saveQuestionForTest(question, category, answer1, answer2, answer3, answerOk);
+    
+    // var answer = new answer();
+    // parseManager.saveRightAnswerForTest(answer);
+    
+    // var category = new category();
+    // parseManager.saveCategoryForTest(category);
+    
+    /* var TestObject = Parse.Object.extend("TestObject");
+    var testObject = new TestObject();
+      testObject.save({foo: "bar"}, {
+      success: function(object) {
+        $(".success").show();
+      },
+      error: function(model, error) {
+        $(".error").show();
+      }
+    }); */
+    
+    var listener = new questionListener();
+    var userAnswerListener = new userAnswerListener();
+    var userAnswer = new userAnswer();
+    var answer = new answer();
+    var user = Parse.User.current();
+    
+    function getQuestion() {
+    	parseManager.getQuestions(listener, question, answerObj, category);
+    }
+    
+    function sendAnswer() {
+    	question.parseId = "gpjJZ6NRxa";
+    	
+    	answer.parseId = "3Gaw27qQ8r";
+    	userAnswer.question = question;
+    	userAnswer.answer = answer;
+    	userAnswer.user = user;
+    	userAnswer.time = "1212";
+    	userAnswer.score = 4;
+    	parseManager.sendAnswer(userAnswer, userAnswerListener);
+    }
+    
+    function createAccount() {
+    	 var listener = new signupListener();
+    	parseManager.signup(listener, "emanuele.pecorari2@gmail.com", "ema22775");
+    }
+    
+    function login() {
+    	var loginlistener = new loginListener();
+        parseManager.login(loginlistener, "emanuele.pecorari@gmail.com", "ema22775");
+    }
+    
+    function scoreList() {
+    	var scorelistener = new userScoreListListener();
+        parseManager.getScores(scorelistener);
+    }
+    
+    
+  </script>
+  
+  <p><a href='#' onclick='getQuestion();'>getQuestion</a></p>
+  <p><a href='#' onclick='sendAnswer()'>sendAnswer</a></p>
+  <p><a href='#' onclick='createAccount()'>createAccount</a></p>
+  <p><a href='#' onclick='login()'>login</a></p>
+  <p><a href='#' onclick='scoreList()'>Score list</a></p>
+</body>
+
+</html>
