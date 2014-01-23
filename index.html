@@ -21,9 +21,11 @@
 		<link rel="stylesheet" href="css/jquery.countdown.css"> 
         <link rel="stylesheet" href="css/animate.css">
 		<link rel="stylesheet" href="css/style.css">
+		
+		 
         
 		<script src="js/modernizr-2.6.2.min.js"></script>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
 		<!--<script src="js/jquery-1.10.2.min.js"></script>-->
         <script src="js/plugins.js"></script>
@@ -32,8 +34,23 @@
 		<script src="js/jquery.knob.js"></script>
 		<script src="js/timer.js"></script>
         <script src="js/script.js"></script>
+         
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  		<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.15.min.js"></script>
+		<script type="text/javascript" src="./js/communication/beans/question.js"></script>
+		<script type="text/javascript" src="./js/communication/beans/answer.js"></script>
+		<script type="text/javascript" src="./js/communication/beans/category.js"></script>
+		<script type="text/javascript" src="./js/communication/beans/userAnswer.js"></script>
+		<script type="text/javascript" src="./js/communication/data/parseManager.js"></script>
+		<script type="text/javascript" src="./js/communication/listeners/signupListener.js"></script>
+		<script type="text/javascript" src="./js/communication/listeners/loginListener.js"></script>
+		<script type="text/javascript" src="./js/communication/listeners/questionListener.js"></script>
+		<script type="text/javascript" src="./js/communication/listeners/userAnswerListener.js"></script>
+		<script type="text/javascript" src="./js/communication/listeners/userScoreListListener.js"></script>
+     
 		
 		<script> 
+		 	Parse.initialize("qFecWFZDy9yWoNjfEWdcvYW2S0LQzgw5BdvVm7lx", "EKA98gnS1A49Yy0xHB60MtEB8nElHBAg6uhCimg9");
 			$(document).ready(init);
 		</script>
     </head>
@@ -81,7 +98,7 @@
 					</span>
 				</div>
 				<div id="boxQuestion" class="col-xs-6">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</p>
+					<p id="questionText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</p>
 				</div>
 				<div id="boxScore" class="col-xs-2">
 					<span>Score:
@@ -98,22 +115,22 @@
 					
 					<div class="command" id="commandA">
 						<div class="commandLabelTopLeft">A</div>
-						<span class="answer">Init countdown</span>
+						<span class="answer" id="buttonAText">Init countdown</span>
 					</div>
 					
 					<div class="command" id="commandB">
 						<div class="commandLabelBottomLeft">B</div>
-						<span class="answer">Pause countdown</span>
+						<span class="answer" id="buttonBText">Pause countdown</span>
 					</div>
 					
 					<div class="command" id="commandC">
 						<div class="commandLabelTopRight">C</div>
-						<span class="answer">Resume countdown</span>
+						<span class="answer" id="buttonCText">Resume countdown</span>
 					</div>
 					
 					<div class="command" id="commandD">
 						<div class="commandLabelBottomRight">D</div>
-						<span class="answer">Unassigned</span>
+						<span class="answer" id="buttonDText">Unassigned</span>
 					</div>
 					
 					<div id="centralButton"></div>
