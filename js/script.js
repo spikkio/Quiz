@@ -9,6 +9,7 @@ function init() {
 	
 	initializeMainMenu();
 	
+	
 	$('.dial').knob({'min':0,'max':maxTime/100, 'linecap': 'round', 'step': 0.1, 'thickness': 0.3, 'readOnly': true, 'skin':'tron', 'width':80});
 	$('.dial').attr('value', maxTime/100);
 	
@@ -97,13 +98,17 @@ function validateAnswer() {
 function initializeMainMenu() {
 
 	$(document).on("click", "#playButton", function() {
-		$("#mainMenu").addClass("animated slideOutLeft");
+		$("#mainMenu").toggle('slide', { direction: 'left'}, 500, function (){
+		$("#board").toggle('slide', { direction: 'right', mode: 'hide' }, 500);
+		});
+		
+		
+		/*$("#mainMenu").addClass("animated slideOutLeft");
 		$('#mainMenu').one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function() {
 			$("#mainMenu").css("display", "none");
 		});
-		
 		$("#board").css("display", "block");
-		$("#board").addClass("animated slideInRight");
+		$("#board").addClass("animated slideInRight");*/
 	});
 		
 }
